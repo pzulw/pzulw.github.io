@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wisner.org</title>
+  <style>
+    :root {
+      --bg: #f3f1ec;
+      --panel: #ffffff;
+      --ink: #1f1f1f;
+      --muted: #5b5b5b;
+      --line: #d9d2c8;
+      --accent: #3a6ea5;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      display: flex;
+      justify-content: center;
+      padding: 48px 20px;
+    }
+
+    .page {
+      width: min(900px, 100%);
+    }
+
+    h1 {
+      margin: 0 0 26px;
+      font-size: clamp(2.3rem, 7vw, 4.2rem);
+      letter-spacing: 0.06em;
+      text-align: center;
+    }
+
+    .topics {
+      display: grid;
+      gap: 16px;
+    }
+
+    details {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+      overflow: hidden;
+    }
+
+    summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 18px 20px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      position: relative;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "+";
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      color: var(--accent);
+    }
+
+    details[open] summary::after {
+      content: "−";
+    }
+
+    .content {
+      padding: 0 20px 20px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .content p {
+      margin: 0 0 1em;
+    }
+
+    .content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .band-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .band-list li {
+      line-height: 1.6;
+    }
+
+    .band-name {
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .band-range {
+      color: var(--muted);
+      font-size: 0.95em;
+    }
+
+    .band-list a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .band-list a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <h1>wisner.org</h1>
+
+    <section class="topics" aria-label="Topic sections">
+      <details open>
+        <summary>Boston</summary>
+        <div class="content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Suspendisse potenti. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer ac nibh non lorem dignissim finibus.</p>
+          <p>Praesent volutpat, risus ac laoreet lobortis, purus erat efficitur nisl, vel tristique odio lacus et mauris. Donec sit amet interdum enim. Sed quis velit in arcu blandit finibus. Donec non neque ut nunc interdum auctor.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>My Music</summary>
+        <div class="content">
+          <ul class="band-list">
+            <li><span class="band-name">Ghosts and Shadows</span> <span class="band-range">[2013–now]</span> (<a href="https://ghostsandshadows.bandcamp.com/" target="_blank" rel="noreferrer">Bandcamp</a>) (<a href="https://open.spotify.com/artist/0Iq5iOdfxVensEKzCTVt2B" target="_blank" rel="noreferrer">Spotify</a>)</li>
+            <li><span class="band-name">Stever Must Lead the Rebellion</span> <span class="band-range">[2014]</span> (<a href="https://stevermustleadtherebellion.bandcamp.com/" target="_blank" rel="noreferrer">Bandcamp</a>) (<a href="https://open.spotify.com/artist/4GQvFj0gS7gK2Vjg9d0e0q" target="_blank" rel="noreferrer">Spotify</a>)</li>
+            <li><span class="band-name">Miskatonic</span> <span class="band-range">[2012–2018]</span> (<a href="https://miskatonic.bandcamp.com/" target="_blank" rel="noreferrer">Bandcamp</a>) (<a href="https://open.spotify.com/artist/2WfgX3aY7y7cVvHqQwX6sJ" target="_blank" rel="noreferrer">Spotify</a>)</li>
+            <li><span class="band-name">Calendar Girl</span> <span class="band-range">[1998–2002]</span> (<a href="https://calendargirl.bandcamp.com/" target="_blank" rel="noreferrer">Bandcamp</a>) (<a href="https://open.spotify.com/artist/3R0a3P2nQ5n7h0rS64wBxd" target="_blank" rel="noreferrer">Spotify</a>)</li>
+            <li><span class="band-name">Ultrabreakfast</span> <span class="band-range">[1994–1999]</span> (<a href="https://ultrabreakfast.bandcamp.com/" target="_blank" rel="noreferrer">Bandcamp</a>) (<a href="https://open.spotify.com/artist/7uil8gW4wxMrT2njNhltDn" target="_blank" rel="noreferrer">Spotify</a>)</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>Software Development</summary>
+        <div class="content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam blandit, lacus a fermentum euismod, augue nisi placerat massa, quis luctus erat justo id odio.</p>
+          <p>Morbi nec imperdiet tellus. Etiam in augue at nibh feugiat vestibulum. Donec nec mauris a turpis venenatis interdum. Integer feugiat nisi vitae dui gravida, ac efficitur mi luctus. Curabitur in sapien convallis, pulvinar urna vitae, lacinia magna.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>No Kings</summary>
+        <div class="content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac nisl non nisi suscipit posuere. Mauris sed risus efficitur, malesuada sem ac, pretium eros. Nulla facilisi. In a metus ullamcorper, dictum urna id, aliquam sem.</p>
+          <p>Fusce lobortis ante et nunc dignissim, at tincidunt turpis pretium. Praesent euismod magna non purus tempus, quis feugiat ipsum aliquet. Aliquam dapibus, metus et suscipit bibendum, dolor nibh mollis nibh, quis placerat felis velit sed ligula.</p>
+        </div>
+      </details>
+    </section>
+  </main>
+</body>
+</html>
